@@ -1,0 +1,13 @@
+{
+  "instance":[
+    {"instance_ami" : {"default":"ami-0ee23bfc74a881de5", "default_nickname":"Ubuntu Server 18.04"}},
+    {"instance_type" : {"default":"t2.micro"}},
+    {"sg_id" : {"default":"Null"}}
+  ],
+  "security_group":[
+    {"sg_name":{"default":"Null"}},
+    {"from_port":{"default":"22", "default_nickname":"SSH connection"}},
+    {"to_port":{"default":"22", "default_nickname":"SSH connection"}},
+    {"protocol":{"default":"tcp"}}
+  ]
+}

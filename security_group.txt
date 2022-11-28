@@ -1,0 +1,11 @@
+resource "aws_security_group" name_tf {
+  name        = var.sg_name
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    from_port        = var.from_port
+    to_port          = var.to_port
+    protocol         = var.protocol
+    cidr_blocks      = [aws_vpc.main.cidr_block]
+  }
+}

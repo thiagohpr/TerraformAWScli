@@ -1,0 +1,11 @@
+resource "aws_instance" name_tf {
+  ami           = var.instance_ami
+  instance_type = var.instance_type
+  subnet_id = aws_subnet.main_subnet.id
+  vpc_security_group_ids = [var.sg_id]
+}
+
+#var.sg_ids deve ser uma variável na variables.tf
+#como vpc_security_group_ids deve ser uma lista, o type do da variável deve ser list(string)
+#por isso, deve ter mais de um padrão de variável (criar um variable_list.txt)
+#além disso, adicionar a opção de escolher security groups a uma instância. Ela pode ter mais de um sg, a solução seria listar todos os criados e fazer o usuário escolher quais ele quer para a instância. Daí, adicionar na variavel da lista de security groups daquela instância os ids dos escolhidos (pegar no tf.state)
